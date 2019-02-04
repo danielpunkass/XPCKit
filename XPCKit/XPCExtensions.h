@@ -20,16 +20,16 @@
 #import <Foundation/Foundation.h>
 #import <xpc/xpc.h>
 
-#import "NSObject+XPCParse.h"
+#import <XPCKit/NSObject+XPCParse.h>
 
-#import "NSDictionary+XPCParse.h"
-#import "NSArray+XPCParse.h"
+#import <XPCKit/NSDictionary+XPCParse.h>
+#import <XPCKit/NSArray+XPCParse.h>
 
-#import "NSNumber+XPCParse.h"
-#import "NSData+XPCParse.h"
-#import "NSString+XPCParse.h"
-#import "NSDate+XPCParse.h"
+#import <XPCKit/NSNumber+XPCParse.h>
+#import <XPCKit/NSData+XPCParse.h>
+#import <XPCKit/NSString+XPCParse.h>
+#import <XPCKit/NSDate+XPCParse.h>
 
-#import "NSFileHandle+XPCParse.h"
+#import <XPCKit/NSFileHandle+XPCParse.h>
 
-#import "XPCUUID.h"
+#import <XPCKit/XPCUUID.h>

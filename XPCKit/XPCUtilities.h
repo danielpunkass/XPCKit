@@ -18,8 +18,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XPCMessage.h"
-#import "XPCConnection.h"
+#import <XPCKit/XPCMessage.h>
+#import <XPCKit/XPCConnection.h>
 
 enum _XPCLogLevel
 {

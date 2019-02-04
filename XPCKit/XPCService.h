@@ -18,8 +18,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XPCTypes.h"
-#import "XPCConnection.h"
+#import <XPCKit/XPCTypes.h>
+#import <XPCKit/XPCConnection.h>
 
 @interface XPCService : NSObject {
     XPCConnectionHandler connectionHandler;
