@@ -22,7 +22,6 @@
 #import <XPCKit/XPCConnection.h>
 
 @interface XPCService : NSObject {
-    XPCConnectionHandler connectionHandler;
     NSArray *_connections;
 }
 

@@ -49,6 +49,12 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
     return self;
 }
 
+- (void)dealloc
+{
+	[_connections release];
+	[super dealloc];
+}
+
 +(void)runService{
 	xpc_main(XPCServiceConnectionHandler);
 }
