@@ -108,7 +108,7 @@
         
         if (object == XPC_ERROR_CONNECTION_INTERRUPTED ||
             object == XPC_ERROR_CONNECTION_INVALID ||
-            object == XPC_ERROR_KEY_DESCRIPTION ||
+            object == (xpc_object_t) XPC_ERROR_KEY_DESCRIPTION ||  // DCJ: Seems like it might be a mistake but it's been part of code forever. Casting away the warning
             object == XPC_ERROR_TERMINATION_IMMINENT)
         {
             xpc_object_t errorDict = xpc_dictionary_create(NULL, NULL, 0);
@@ -182,9 +182,11 @@
     } else {
         // Need to tell message that we want a direct reply
         [inMessage setNeedsDirectReply:YES];
-        
-        dispatch_queue_t replyQueue = self.replyDispatchQueue ? self.replyDispatchQueue : dispatch_get_current_queue();
-        dispatch_retain(replyQueue);
+
+		// XPCConnection requires specifying a non-NULL replyDispatchQueue
+		dispatch_queue_t replyQueue = self.replyDispatchQueue;
+		assert(replyQueue != NULL);
+		dispatch_retain(replyQueue);
         
 		XPCReplyHandler replyHandler = [inReplyHandler copy];
 		XPCErrorHandler errorHandler = [inErrorHandler copy];

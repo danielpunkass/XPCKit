@@ -26,6 +26,9 @@
 //     (i.e. target and object must conform to NSCoding when connection is not nil).
 // When XPCConnection is nil (e.g. running on Snow Leopard) message will be dispatched asynchronously via GCD.
 
+// Not used by anything but the test app and exhibits deprecated warnings.
+#if 0
+
 void XPCPerformSelectorAsync(XPCConnection *inConnection,
                                    id inTarget, SEL inSelector, id inObject,
                                    XPCReturnValueHandler inReturnHandler)
@@ -74,6 +77,7 @@ void XPCPerformSelectorAsync(XPCConnection *inConnection,
     }
 }
 
+#endif
 
 #pragma mark - Log Levels
 

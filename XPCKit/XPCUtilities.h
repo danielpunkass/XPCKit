@@ -49,6 +49,8 @@ void XPCSetLogLevel(XPCLogLevel inLogLevel);
 #define XPCSendLogAll(connection, str)     XPCSendLogLevel(connection, XPCLogLevelAll, str)
 
 
+// Not used by anything but the test app and exhibits deprecated warnings.
+#if 0
 
 // Dispatch a message with optional argument object to a target object asynchronously.
 // When XPConnection is not nil the message will be transfered to XPC service for execution
@@ -58,3 +60,5 @@ void XPCSetLogLevel(XPCLogLevel inLogLevel);
 void XPCPerformSelectorAsync(XPCConnection *inConnection,
                              id inTarget, SEL inSelector, id inObject,
                              XPCReturnValueHandler inCompletionHandler);
+
+#endif
